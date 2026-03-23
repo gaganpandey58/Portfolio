@@ -1,9 +1,11 @@
 "use strict";
 
 const body = document.body;
+const root = document.documentElement;
 const header = document.querySelector(".site-header");
 const nav = document.querySelector(".nav");
 const menuToggle = document.querySelector(".menu-toggle");
+const themeToggle = document.querySelector(".theme-toggle");
 const navMenu = document.querySelector("#primary-menu");
 const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
 const progressBar = document.querySelector("#scroll-progress-bar");
@@ -22,9 +24,64 @@ const prefersReducedMotion = window.matchMedia(
 
 let countersStarted = false;
 let ticking = false;
+const THEME_STORAGE_KEY = "portfolio-theme";
 
 if (yearNode) {
   yearNode.textContent = String(new Date().getFullYear());
+}
+
+const getStoredTheme = () => {
+  try {
+    const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    if (storedTheme === "light" || storedTheme === "dark") {
+      return storedTheme;
+    }
+  } catch (error) {
+    return null;
+  }
+  return null;
+};
+
+const setThemeToggleUI = (theme) => {
+  if (!themeToggle) {
+    return;
+  }
+  const isDark = theme === "dark";
+  themeToggle.setAttribute(
+    "aria-label",
+    isDark ? "Switch to light mode" : "Switch to dark mode"
+  );
+  themeToggle.setAttribute("aria-pressed", String(isDark));
+  themeToggle.title = isDark ? "Switch to light mode" : "Switch to dark mode";
+};
+
+const applyTheme = (theme) => {
+  root.setAttribute("data-theme", theme);
+  setThemeToggleUI(theme);
+};
+
+const systemThemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const storedTheme = getStoredTheme();
+const initialTheme = storedTheme || (systemThemeQuery.matches ? "dark" : "light");
+applyTheme(initialTheme);
+
+if (!storedTheme) {
+  systemThemeQuery.addEventListener("change", (event) => {
+    applyTheme(event.matches ? "dark" : "light");
+  });
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+    const nextTheme = currentTheme === "dark" ? "light" : "dark";
+    applyTheme(nextTheme);
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+    } catch (error) {
+      // no-op: storage may be unavailable in restricted contexts
+    }
+  });
 }
 
 const closeMenu = () => {
