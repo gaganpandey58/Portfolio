@@ -46,6 +46,26 @@ body {
   min-height: 100vh;
 }
 
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 0.9rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid rgba(129, 133, 141, 0.42);
+  background: rgba(249, 247, 244, 0.98);
+  color: var(--text-primary);
+  font-size: 0.86rem;
+  font-weight: 700;
+  z-index: 1200;
+  transform: translateY(-140%);
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0.72rem);
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -183,6 +203,7 @@ ul {
 .nav-links {
   display: flex;
   align-items: center;
+  margin-left: clamp(1rem, 2vw, 1.8rem);
   gap: clamp(0.75rem, 1.8vw, 1.25rem);
 }
 
@@ -1210,7 +1231,7 @@ a.contact-card:focus-visible {
 }
 
 :focus-visible {
-  outline: 2px solid rgba(147, 197, 253, 0.9);
+  outline: 3px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -1250,6 +1271,16 @@ body.menu-open {
   background: rgba(8, 14, 25, 0.86);
   border-color: rgba(124, 146, 177, 0.24);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.32);
+}
+
+[data-theme="dark"] .skip-link {
+  border-color: rgba(130, 154, 186, 0.45);
+  background: rgba(15, 24, 37, 0.96);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] :focus-visible {
+  outline-color: var(--accent-soft);
 }
 
 [data-theme="dark"] .theme-toggle {
@@ -1454,6 +1485,7 @@ body.menu-open {
     position: absolute;
     right: 4vw;
     top: calc(var(--header-height) - 4px);
+    margin-left: 0;
     width: min(280px, 90vw);
     display: grid;
     gap: 0.35rem;

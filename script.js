@@ -147,6 +147,26 @@ const scrollToHash = (hash) => {
   });
 };
 
+const moveFocusToTarget = (target) => {
+  if (!target) {
+    return;
+  }
+  const hadTabIndex = target.hasAttribute("tabindex");
+  if (!hadTabIndex) {
+    target.setAttribute("tabindex", "-1");
+  }
+  target.focus({ preventScroll: true });
+  if (!hadTabIndex) {
+    target.addEventListener(
+      "blur",
+      () => {
+        target.removeAttribute("tabindex");
+      },
+      { once: true }
+    );
+  }
+};
+
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", (event) => {
     const { hash } = anchor;
@@ -161,6 +181,10 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
     event.preventDefault();
     scrollToHash(hash);
+    const focusDelay = prefersReducedMotion ? 0 : 320;
+    window.setTimeout(() => {
+      moveFocusToTarget(target);
+    }, focusDelay);
     closeMenu();
   });
 });

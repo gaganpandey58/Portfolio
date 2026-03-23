@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="Portfolio of Gagan Pandey, Senior SDET / Senior QA Engineer focused on automation architecture, QA strategy, CI/CD quality, and healthcare systems."
-    />
+      content="Portfolio of Gagan Pandey, Senior SDET / Senior QA Engineer focused on automation architecture, QA strategy, CI/CD quality, and healthcare systems.">
     <title>Gagan Pandey | Senior SDET / Senior QA Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png" />
-    <link rel="shortcut icon" href="assets/favicon.ico" />
-    <link rel="stylesheet" href="style.css" />
+      rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <div class="scroll-progress" aria-hidden="true">
       <span id="scroll-progress-bar"></span>
     </div>
@@ -35,6 +35,17 @@
             <span class="brand-role">Senior SDET / Senior QA Engineer</span>
           </span>
         </a>
+
+        <ul class="nav-links" id="primary-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="#resume">CV</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#languages">Languages</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
 
         <div class="nav-actions">
           <button
@@ -75,21 +86,10 @@
             </span>
           </button>
         </div>
-
-        <ul class="nav-links" id="primary-menu">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#impact">Impact</a></li>
-          <li><a href="#resume">CV</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#languages">Languages</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
       </nav>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <section class="hero section" id="hero" aria-labelledby="hero-title">
         <div class="hero-visual" aria-hidden="true">
           <span class="hero-orb orb-one"></span>
@@ -114,7 +114,7 @@
               consulting engagements, and healthcare-tech platforms.
             </p>
 
-            <ul class="hero-chips" aria-label="Core specialties">
+            <ul class="hero-chips">
               <li>5+ Years Experience</li>
               <li>Test Automation</li>
               <li>QA Leadership</li>
@@ -152,8 +152,7 @@
                 src="assets/gagan-pandey.jpg"
                 alt="Portrait of Gagan Pandey"
                 loading="eager"
-                decoding="async"
-              />
+                decoding="async">
             </figure>
             <p class="card-label">Engineering Highlights</p>
             <h2>Systems-level initiatives that improved release confidence.</h2>
@@ -582,7 +581,7 @@
             </a>
             <a href="tel:+9779860807046" class="contact-card">
               <h3>Phone</h3>
-              <p>+977-9860807046</p>
+              <p>+977&#8209;9860807046</p>
             </a>
             <div class="contact-card">
               <h3>Location</h3>
@@ -593,7 +592,8 @@
               href="https://www.linkedin.com/in/gaganpandeyy/"
               class="contact-card"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              aria-label="Open LinkedIn profile in a new tab"
             >
               <h3>LinkedIn</h3>
               <p>View Profile</p>
@@ -603,7 +603,8 @@
               href="https://github.com/gaganpandey58/"
               class="contact-card"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              aria-label="Open GitHub profile in a new tab"
             >
               <h3>GitHub</h3>
               <p>View Repositories</p>
@@ -632,8 +633,9 @@
                   name="name"
                   autocomplete="name"
                   required
-                  placeholder="Your full name"
-                />
+                  aria-required="true"
+                  aria-describedby="formStatus"
+                  placeholder="Your full name">
               </div>
 
               <div class="field-group">
@@ -644,8 +646,9 @@
                   name="email"
                   autocomplete="email"
                   required
-                  placeholder="you@example.com"
-                />
+                  aria-required="true"
+                  aria-describedby="formStatus"
+                  placeholder="you@example.com">
               </div>
 
               <div class="field-group full-width">
@@ -655,6 +658,8 @@
                   name="message"
                   rows="6"
                   required
+                  aria-required="true"
+                  aria-describedby="formStatus"
                   placeholder="Tell me about the role, project, or challenge."
                 ></textarea>
               </div>
@@ -679,14 +684,14 @@
           <a
             href="https://www.linkedin.com/in/gaganpandeyy/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label="LinkedIn"
             >LinkedIn</a
           >
           <a
             href="https://github.com/gaganpandey58/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label="GitHub"
             >GitHub</a
           >
@@ -698,7 +703,12 @@
       </p>
     </footer>
 
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <button
+      id="backToTop"
+      class="back-to-top"
+      type="button"
+      aria-label="Back to top"
+    >
       ↑
     </button>
 
