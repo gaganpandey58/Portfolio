@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Gagan Pandey, Senior SDET / Senior QA Engineer focused on automation architecture, QA strategy, CI/CD quality, and healthcare systems."
+    />
+    <title>Gagan Pandey | Senior SDET / Senior QA Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true">
+      <span id="scroll-progress-bar"></span>
+    </div>
+
+    <header class="site-header" id="top">
+      <nav class="nav container" aria-label="Primary navigation">
+        <a href="#hero" class="brand" aria-label="Go to top">
+          <span class="brand-text">
+            <span class="brand-name">Gagan Pandey</span>
+            <span class="brand-role">Senior SDET / Senior QA Engineer</span>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-menu"
+          aria-label="Open navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="primary-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="#resume">CV</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#languages">Languages</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section" id="hero" aria-labelledby="hero-title">
+        <div class="hero-visual" aria-hidden="true">
+          <span class="hero-orb orb-one"></span>
+          <span class="hero-orb orb-two"></span>
+          <span class="hero-orb orb-three"></span>
+        </div>
+
+        <div class="container hero-grid">
+          <div class="hero-content" data-reveal>
+            <div class="hero-topline">
+              <p class="eyebrow">Kathmandu, Nepal</p>
+              <span class="open-badge">Open to Work</span>
+            </div>
+            <h1 id="hero-title">Gagan Pandey</h1>
+            <p class="hero-role">Senior SDET / Senior QA Engineer</p>
+            <p class="hero-summary">
+              Lead Quality Engineer / Lead SDET with 5+ years building
+              automation systems for U.S. healthcare and AI-assisted testing
+              workflows. Delivers framework-level engineering across API, web,
+              and Windows testing with CI/CD-integrated quality gates and
+              measurable release reliability improvements for product teams,
+              consulting engagements, and healthcare-tech platforms.
+            </p>
+
+            <ul class="hero-chips" aria-label="Core specialties">
+              <li>5+ Years Experience</li>
+              <li>Test Automation</li>
+              <li>QA Leadership</li>
+              <li>Healthcare Systems</li>
+              <li>CI/CD Quality Engineering</li>
+            </ul>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#experience">View Experience</a>
+              <a class="btn btn-ghost" href="#contact">Contact Me</a>
+              <a class="btn btn-ghost" href="assets/gagan-pandey-cv.pdf" download
+                >Download CV</a
+              >
+            </div>
+
+            <div class="hero-stats">
+              <article class="mini-stat">
+                <h3>50%</h3>
+                <p>Less Manual Testing</p>
+              </article>
+              <article class="mini-stat">
+                <h3>40%</h3>
+                <p>Higher Automation Efficiency</p>
+              </article>
+              <article class="mini-stat">
+                <h3>35%</h3>
+                <p>Faster Deployments</p>
+              </article>
+            </div>
+          </div>
+
+          <aside class="hero-card" data-reveal data-delay="1">
+            <figure class="hero-photo-wrap">
+              <img
+                src="assets/gagan-pandey.jpg"
+                alt="Portrait of Gagan Pandey"
+                loading="eager"
+                decoding="async"
+              />
+            </figure>
+            <p class="card-label">Engineering Highlights</p>
+            <h2>Systems-level initiatives that improved release confidence.</h2>
+            <ul class="focus-list">
+              <li>
+                Engineered a biometric device mocking mechanism for Higi kiosk
+                BP, WT, and BC data to strengthen automated test coverage.
+              </li>
+              <li>
+                Migrated legacy Selenium, REST Assured, and Java automation to
+                modern Playwright with TypeScript for faster execution.
+              </li>
+              <li>
+                Drove R&amp;D and implementation of AI tools with MCP servers to
+                improve STLC speed, efficiency, and execution quality.
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section about" id="about" aria-labelledby="about-title">
+        <div class="container split-layout">
+          <div data-reveal>
+            <p class="section-kicker">About</p>
+            <h2 id="about-title">
+              QA engineering built for product, services, and healthcare-tech.
+            </h2>
+            <p class="lead">
+              Lead Quality Engineer / Lead SDET who designs and operationalizes
+              test architecture across API, web, and Windows surfaces, with
+              strong emphasis on coverage depth, execution speed, and defect
+              containment.
+            </p>
+            <p>
+              Combines automation framework design, CI/CD integration, and
+              early defect isolation to reduce cycle time and improve release
+              predictability. Works closely with engineering, R&amp;D, and support
+              teams to turn recurring issues into repeatable automated checks,
+              production-safe delivery patterns, and scalable quality
+              engineering practices.
+            </p>
+          </div>
+
+          <div class="about-cards" data-reveal data-delay="2">
+            <article class="feature-card">
+              <h3>For Product Companies</h3>
+              <p>
+                Builds maintainable automation architecture and CI/CD quality
+                gates that improve release confidence, increase test coverage,
+                and shorten feedback cycles for fast-moving product teams.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h3>For Consulting / Services</h3>
+              <p>
+                Delivers structured QA strategy across client contexts with
+                strong cross-functional collaboration, clear quality ownership,
+                and measurable delivery improvements.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h3>For Healthcare-tech</h3>
+              <p>
+                Applies healthcare-domain testing rigor across API, web, and
+                device flows with early defect detection, validation accuracy,
+                and reliability-first execution.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section experience"
+        id="experience"
+        aria-labelledby="experience-title"
+      >
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <p class="section-kicker">Experience</p>
+            <h2 id="experience-title">Professional Experience</h2>
+          </div>
+
+          <div class="timeline">
+            <article class="exp-card" data-reveal data-delay="1">
+              <div class="exp-head">
+                <h3>SDET</h3>
+                <p>Higi (as a part of DeerHold)</p>
+                <span>Jul 2021 – Present · Kathmandu, Nepal</span>
+              </div>
+              <p class="exp-summary">
+                Architected and operated automation frameworks plus CI/CD
+                quality controls to increase release throughput, coverage depth,
+                and production confidence.
+              </p>
+              <ul>
+                <li>
+                  Built automated test frameworks using Java and Selenium,
+                  reducing manual testing efforts by 50%.
+                </li>
+                <li>
+                  Implemented CI/CD pipelines that accelerated deployment speed
+                  by 30%.
+                </li>
+                <li>
+                  Developed comprehensive test plans that increased test
+                  coverage by 40%.
+                </li>
+                <li>
+                  Identified and resolved critical bugs early, contributing to
+                  a 20% reduction in overall development costs.
+                </li>
+                <li>
+                  Migrated automation from Selenium to Playwright, improving
+                  performance and testing efficiency.
+                </li>
+                <li>
+                  Mentored team members and collaborated across Agile ceremonies
+                  to strengthen delivery alignment and troubleshooting outcomes.
+                </li>
+              </ul>
+            </article>
+
+            <article class="exp-card" data-reveal data-delay="2">
+              <div class="exp-head">
+                <h3>SDET</h3>
+                <p>ModivCare, VRI (as a part of DeerHold)</p>
+                <span>Feb 2024 – Present · Kathmandu, Nepal</span>
+              </div>
+              <p class="exp-summary">
+                Implemented a unified test platform across API, web, and
+                Windows applications with stronger endpoint validation and
+                faster deployment feedback.
+              </p>
+              <ul>
+                <li>
+                  Developed a unified test framework that improved automation
+                  efficiency by 40% across API, web, and Windows tests.
+                </li>
+                <li>
+                  Built API test suites with REST Assured and Postman, improving
+                  endpoint validation accuracy by 30%.
+                </li>
+                <li>
+                  Created a Windows automation framework with WinAppDriver and
+                  Appium, reducing manual testing time by 50%.
+                </li>
+                <li>
+                  Mentored and coached 10 team members, improving overall
+                  testing productivity by 25%.
+                </li>
+                <li>
+                  Integrated CI/CD pipelines that increased deployment speed by
+                  35% and improved delivery reliability.
+                </li>
+                <li>
+                  Led cross-functional testing initiatives that reduced project
+                  timelines by 20%, lowered defect rates by 15%, and improved
+                  defect resolution efficiency by 30%.
+                </li>
+              </ul>
+            </article>
+
+            <article class="exp-card" data-reveal data-delay="3">
+              <div class="exp-head">
+                <h3>Associate Software Engineer</h3>
+                <p>Deerhold Nepal Pvt. Ltd</p>
+                <span>Mar 2020 – Jul 2021 · Kathmandu, Nepal</span>
+              </div>
+              <p class="exp-summary">
+                Engineered backend services and API integrations for the JSIE
+                platform with a focus on latency reduction, uptime stability,
+                and predictable Agile delivery.
+              </p>
+              <ul>
+                <li>
+                  Spearheaded JSIE platform development for student mental
+                  health support, driving a 30% increase in user engagement.
+                </li>
+                <li>
+                  Engineered backend services with Spring Boot and Groovy,
+                  improving application performance by 25% through optimized
+                  MongoDB data retrieval.
+                </li>
+                <li>
+                  Designed high-performance RESTful APIs integrated with Vue.js,
+                  reducing response time by 40%.
+                </li>
+                <li>
+                  Developed user-focused Vue.js interfaces that improved user
+                  interaction metrics by 20%.
+                </li>
+                <li>
+                  Maintained 99% platform uptime post-launch through proactive
+                  monitoring and rapid issue resolution.
+                </li>
+                <li>
+                  Improved engineering outcomes through Agile collaboration,
+                  code reviews, and knowledge sharing, including a 30% reduction
+                  in launch bugs and 15% faster sprint delivery.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section skills" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <p class="section-kicker">Skills</p>
+            <h2 id="skills-title">Technical Skill Set</h2>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-card" data-reveal data-delay="1">
+              <h3>Programming Languages</h3>
+              <div class="chip-wrap">
+                <span>Java</span><span>Kotlin</span><span>Groovy</span>
+                <span>JavaScript</span><span>TypeScript</span><span>Python</span>
+              </div>
+            </article>
+
+            <article class="skill-card" data-reveal data-delay="2">
+              <h3>Test Automation Tools / Frameworks</h3>
+              <div class="chip-wrap">
+                <span>Selenium WebDriver</span><span>Selenide</span>
+                <span>Playwright</span><span>Cypress</span><span>Appium</span>
+                <span>REST Assured</span><span>Postman</span><span>JUnit</span>
+                <span>TestNG</span><span>WinAppDriver</span>
+              </div>
+            </article>
+
+            <article class="skill-card" data-reveal data-delay="3">
+              <h3>Databases</h3>
+              <div class="chip-wrap">
+                <span>MongoDB</span><span>MySQL</span><span>Postgres</span>
+                <span>MSSQL</span><span>Apache Iceberg</span>
+              </div>
+            </article>
+
+            <article class="skill-card" data-reveal data-delay="1">
+              <h3>Backend Technologies</h3>
+              <div class="chip-wrap">
+                <span>Spring</span><span>Spring Boot</span><span>Grails</span>
+              </div>
+            </article>
+
+            <article class="skill-card" data-reveal data-delay="2">
+              <h3>Frontend Technologies</h3>
+              <div class="chip-wrap">
+                <span>Vue.js</span>
+              </div>
+            </article>
+
+            <article class="skill-card" data-reveal data-delay="3">
+              <h3>CI/CD</h3>
+              <div class="chip-wrap">
+                <span>Azure DevOps</span><span>GitHub Actions</span>
+                <span>GitLab Actions</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section impact" id="impact" aria-labelledby="impact-title">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <p class="section-kicker">Impact</p>
+            <h2 id="impact-title">Engineering Impact Metrics</h2>
+          </div>
+
+          <div class="metrics-grid">
+            <article class="metric-card" data-reveal data-delay="1">
+              <p class="metric-value" data-target="50" data-suffix="%">0%</p>
+              <h3>Less Manual Testing</h3>
+            </article>
+            <article class="metric-card" data-reveal data-delay="2">
+              <p class="metric-value" data-target="40" data-suffix="%">0%</p>
+              <h3>Better Automation Efficiency</h3>
+            </article>
+            <article class="metric-card" data-reveal data-delay="3">
+              <p class="metric-value" data-target="35" data-suffix="%">0%</p>
+              <h3>Faster Deployments</h3>
+            </article>
+            <article class="metric-card" data-reveal data-delay="4">
+              <p class="metric-value" data-target="30" data-suffix="%">0%</p>
+              <h3>Better Validation Accuracy</h3>
+            </article>
+            <article class="metric-card" data-reveal data-delay="5">
+              <p class="metric-value" data-target="15" data-suffix="%">0%</p>
+              <h3>Lower Defect Rates</h3>
+            </article>
+          </div>
+
+          <div class="impact-highlights">
+            <article class="impact-note" data-reveal data-delay="1">
+              <h3>Biometric Data Mocking Layer</h3>
+              <p>
+                Engineered a mocking mechanism for Higi kiosk BP, WT, and BC
+                biometric data to improve automation depth and reliability.
+              </p>
+            </article>
+            <article class="impact-note" data-reveal data-delay="2">
+              <h3>Framework Modernization</h3>
+              <p>
+                Modernized a legacy Selenium, REST Assured, and Java automation
+                stack to Playwright + TypeScript for faster and more scalable
+                execution.
+              </p>
+            </article>
+            <article class="impact-note" data-reveal data-delay="3">
+              <h3>AI + MCP Test Toolchain</h3>
+              <p>
+                Led R&amp;D and implementation of AI tooling with MCP servers to
+                enable a faster, more efficient software testing lifecycle.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section resume" id="resume" aria-labelledby="resume-title">
+        <div class="container">
+          <div class="resume-card" data-reveal>
+            <p class="section-kicker">Curriculum Vitae</p>
+            <h2 id="resume-title">Download Full CV</h2>
+            <p class="lead">
+              Download the complete CV for detailed role history, framework
+              stack, quantified outcomes, and end-to-end delivery scope.
+            </p>
+            <div class="resume-actions">
+              <a
+                class="btn btn-primary"
+                href="assets/gagan-pandey-cv.pdf"
+                download="Gagan-Pandey-CV.pdf"
+                aria-label="Download Gagan Pandey CV"
+                >Download CV (PDF)</a
+              >
+              <a
+                class="btn btn-ghost"
+                href="assets/gagan-pandey-cv.pdf"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open Gagan Pandey CV in a new tab"
+                >Preview CV</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section education"
+        id="education"
+        aria-labelledby="education-title"
+      >
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <p class="section-kicker">Education</p>
+            <h2 id="education-title">Academic Background</h2>
+          </div>
+
+          <div class="education-grid">
+            <article class="edu-card" data-reveal data-delay="1">
+              <h3>
+                Bachelor of Science in Computer Science and Information
+                Technology
+              </h3>
+              <p>Himalaya College of Engineering</p>
+              <span>2017 – 2021 · Lalitpur, Kathmandu</span>
+            </article>
+            <article class="edu-card" data-reveal data-delay="2">
+              <h3>+2 Science</h3>
+              <p>Trinity International College</p>
+              <span>2017 · Nepal, Kathmandu</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section languages"
+        id="languages"
+        aria-labelledby="languages-title"
+      >
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <p class="section-kicker">Languages</p>
+            <h2 id="languages-title">Communication</h2>
+          </div>
+          <div class="languages-grid">
+            <article class="language-card" data-reveal data-delay="1">
+              <h3>Nepali</h3>
+            </article>
+            <article class="language-card" data-reveal data-delay="2">
+              <h3>Hindi</h3>
+            </article>
+            <article class="language-card" data-reveal data-delay="3">
+              <h3>English</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-wrap">
+          <div data-reveal>
+            <p class="section-kicker">Contact</p>
+            <h2 id="contact-title">
+              Open to technically challenging Senior SDET / QA roles.
+            </h2>
+            <p class="lead">
+              Best fit for teams scaling automation, CI/CD quality controls,
+              and reliability-focused testing across product companies,
+              consulting/services organizations, and healthcare-tech systems.
+            </p>
+          </div>
+
+          <div class="contact-grid" data-reveal data-delay="1">
+            <a href="mailto:gaganpandey58@gmail.com" class="contact-card">
+              <h3>Email</h3>
+              <p>gaganpandey58@gmail.com</p>
+            </a>
+            <a href="tel:+9779860807046" class="contact-card">
+              <h3>Phone</h3>
+              <p>+977-9860807046</p>
+            </a>
+            <div class="contact-card">
+              <h3>Location</h3>
+              <p>Kathmandu, Nepal</p>
+            </div>
+
+            <a
+              href="https://www.linkedin.com/in/gaganpandeyy/"
+              class="contact-card"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <h3>LinkedIn</h3>
+              <p>View Profile</p>
+            </a>
+
+            <a
+              href="https://github.com/gaganpandey58/"
+              class="contact-card"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <h3>GitHub</h3>
+              <p>View Repositories</p>
+            </a>
+          </div>
+
+          <form
+            class="contact-form"
+            id="contactForm"
+            novalidate
+            data-endpoint="https://formsubmit.co/ajax/gaganpandey58@gmail.com"
+            data-reveal
+            data-delay="2"
+          >
+            <div class="form-head">
+              <h3>Send a Message</h3>
+              <p>Direct in-browser form delivery</p>
+            </div>
+
+            <div class="form-grid">
+              <div class="field-group">
+                <label for="contactName">Name</label>
+                <input
+                  type="text"
+                  id="contactName"
+                  name="name"
+                  autocomplete="name"
+                  required
+                  placeholder="Your full name"
+                />
+              </div>
+
+              <div class="field-group">
+                <label for="contactEmail">Email</label>
+                <input
+                  type="email"
+                  id="contactEmail"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  placeholder="you@example.com"
+                />
+              </div>
+
+              <div class="field-group full-width">
+                <label for="contactMessage">Message</label>
+                <textarea
+                  id="contactMessage"
+                  name="message"
+                  rows="6"
+                  required
+                  placeholder="Tell me about the role, project, or challenge."
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Send Message</button>
+              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <p class="footer-name">Gagan Pandey</p>
+          <p class="footer-role">Senior SDET / Senior QA Engineer</p>
+        </div>
+        <div class="footer-links">
+          <a
+            href="https://www.linkedin.com/in/gaganpandeyy/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/gaganpandey58/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+            >GitHub</a
+          >
+          <a href="#top">Top</a>
+        </div>
+      </div>
+      <p class="copyright">
+        © <span id="year"></span> Gagan Pandey. All rights reserved.
+      </p>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      ↑
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
