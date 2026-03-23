@@ -1,0 +1,5 @@
+# Replace domain with your final production URL
+User-agent: *
+Allow: /
+
+Sitemap: https://gaganpandey.dev/sitemap.xml

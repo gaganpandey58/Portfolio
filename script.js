@@ -10,9 +10,11 @@ const navMenu = document.querySelector("#primary-menu");
 const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
 const progressBar = document.querySelector("#scroll-progress-bar");
 const backToTopButton = document.querySelector("#backToTop");
+const stickyCta = document.querySelector("#stickyCta");
 const revealItems = Array.from(document.querySelectorAll("[data-reveal]"));
 const sections = Array.from(document.querySelectorAll("main section[id]"));
 const metricsSection = document.querySelector("#impact");
+const contactSection = document.querySelector("#contact");
 const metricValues = Array.from(document.querySelectorAll(".metric-value"));
 const hero = document.querySelector(".hero");
 const yearNode = document.querySelector("#year");
@@ -224,6 +226,9 @@ const updateScrollUI = () => {
   const doc = document.documentElement;
   const scrollable = doc.scrollHeight - window.innerHeight;
   const progress = scrollable > 0 ? (scrollTop / scrollable) * 100 : 0;
+  const contactTop = contactSection?.getBoundingClientRect().top ?? Infinity;
+  const isNearContact = contactTop <= window.innerHeight * 0.75;
+  const showStickyCta = Boolean(stickyCta) && scrollTop > 420 && !isNearContact;
 
   if (header) {
     header.classList.toggle("scrolled", scrollTop > 12);
@@ -235,6 +240,12 @@ const updateScrollUI = () => {
 
   if (backToTopButton) {
     backToTopButton.classList.toggle("visible", scrollTop > 560);
+  }
+
+  if (stickyCta) {
+    stickyCta.classList.toggle("visible", showStickyCta);
+    stickyCta.setAttribute("aria-hidden", String(!showStickyCta));
+    body.classList.toggle("sticky-cta-visible", showStickyCta);
   }
 
   updateActiveSection();

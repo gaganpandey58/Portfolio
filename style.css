@@ -1142,6 +1142,44 @@ a.contact-card:focus-visible {
   background: rgba(218, 216, 211, 0.96);
 }
 
+.sticky-cta {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  transform: translate(-50%, 14px);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem;
+  border-radius: 14px;
+  border: 1px solid rgba(129, 137, 150, 0.4);
+  background: rgba(238, 235, 230, 0.9);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 14px 30px rgba(62, 68, 80, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease,
+    visibility 220ms ease;
+  z-index: 44;
+}
+
+.sticky-cta .btn {
+  min-height: 42px;
+  padding: 0.6rem 1rem;
+  font-size: 0.86rem;
+  white-space: nowrap;
+}
+
+.sticky-cta.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -1206,6 +1244,10 @@ a.contact-card:focus-visible {
   z-index: 45;
 }
 
+body.sticky-cta-visible .back-to-top {
+  bottom: 5.8rem;
+}
+
 .back-to-top.visible {
   opacity: 1;
   visibility: visible;
@@ -1238,6 +1280,13 @@ a.contact-card:focus-visible {
 
 body.menu-open {
   overflow: hidden;
+}
+
+body.menu-open .sticky-cta {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 14px);
 }
 
 :root[data-theme="dark"] {
@@ -1421,6 +1470,12 @@ body.menu-open {
   background: rgba(8, 14, 24, 0.93);
 }
 
+[data-theme="dark"] .sticky-cta {
+  border-color: rgba(132, 156, 188, 0.4);
+  background: rgba(13, 22, 35, 0.9);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.36);
+}
+
 [data-theme="dark"] .back-to-top {
   border-color: rgba(132, 156, 188, 0.4);
   background: rgba(18, 28, 43, 0.94);
@@ -1601,6 +1656,29 @@ body.menu-open {
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .sticky-cta {
+    width: calc(100% - 1.1rem);
+    left: 0.55rem;
+    right: 0.55rem;
+    bottom: 0.7rem;
+    transform: translate(0, 12px);
+    justify-content: stretch;
+  }
+
+  .sticky-cta .btn {
+    flex: 1 1 50%;
+    min-width: 0;
+    padding-inline: 0.7rem;
+  }
+
+  .sticky-cta.visible {
+    transform: translate(0, 0);
+  }
+
+  body.sticky-cta-visible .back-to-top {
+    bottom: 5.4rem;
   }
 }
 
