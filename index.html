@@ -561,13 +561,14 @@
                 aria-label="Download Gagan Pandey CV"
                 >Download CV (PDF)</a
               >
-              <a
+              <button
                 class="btn btn-ghost"
-                href="assets/gagan-pandey-cv.pdf"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Open Gagan Pandey CV in a new tab"
-                >Preview CV</a
+                type="button"
+                data-cv-preview
+                aria-label="Preview Gagan Pandey CV in modal"
+                aria-haspopup="dialog"
+                aria-controls="cvModal"
+                >Preview CV</button
               >
             </div>
           </div>
@@ -740,6 +741,63 @@
         </div>
       </section>
     </main>
+
+    <div class="cv-modal" id="cvModal" aria-hidden="true">
+      <div class="cv-modal-backdrop" data-cv-close></div>
+      <section
+        class="cv-modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cvModalTitle"
+        aria-describedby="cvModalDescription"
+      >
+        <header class="cv-modal-head">
+          <div>
+            <p class="section-kicker">Inline CV Preview</p>
+            <h2 id="cvModalTitle">Gagan Pandey CV</h2>
+            <p id="cvModalDescription">Preview the CV directly within this page.</p>
+          </div>
+          <div class="cv-modal-actions">
+            <button
+              class="btn btn-primary"
+              type="button"
+              data-cv-download
+              aria-label="Download Gagan Pandey CV"
+              >Download CV</button
+            >
+            <button
+              class="btn btn-ghost cv-modal-close"
+              type="button"
+              data-cv-close
+              aria-label="Close CV preview modal"
+            >
+              Close
+            </button>
+          </div>
+        </header>
+
+        <div class="cv-modal-viewer-wrap">
+          <div class="cv-modal-pages" role="document" aria-label="CV pages preview">
+            <figure class="cv-page">
+              <img
+                src="assets/cv-preview-1.jpg"
+                alt="Gagan Pandey CV page 1"
+                loading="eager"
+                decoding="async">
+              <figcaption>Page 1 of 2</figcaption>
+            </figure>
+            <figure class="cv-page">
+              <img
+                src="assets/cv-preview-2.jpg"
+                alt="Gagan Pandey CV page 2"
+                loading="lazy"
+                decoding="async">
+              <figcaption>Page 2 of 2</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <aside
       class="sticky-cta"

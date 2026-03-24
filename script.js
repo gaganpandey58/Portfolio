@@ -11,6 +11,12 @@ const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
 const progressBar = document.querySelector("#scroll-progress-bar");
 const backToTopButton = document.querySelector("#backToTop");
 const stickyCta = document.querySelector("#stickyCta");
+const cvModal = document.querySelector("#cvModal");
+const cvModalPanel = document.querySelector(".cv-modal-panel");
+const cvPreviewButtons = Array.from(document.querySelectorAll("[data-cv-preview]"));
+const cvCloseTriggers = Array.from(document.querySelectorAll("[data-cv-close]"));
+const cvModalCloseButton = document.querySelector(".cv-modal-close");
+const cvModalDownloadButton = document.querySelector("[data-cv-download]");
 const revealItems = Array.from(document.querySelectorAll("[data-reveal]"));
 const sections = Array.from(document.querySelectorAll("main section[id]"));
 const metricsSection = document.querySelector("#impact");
@@ -23,9 +29,12 @@ const formStatus = document.querySelector("#formStatus");
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
 ).matches;
+const CV_DOWNLOAD_SOURCE = "assets/gagan-pandey-cv.pdf";
+const CV_DOWNLOAD_FILENAME = "Gagan-Pandey-CV.pdf";
 
 let countersStarted = false;
 let ticking = false;
+let lastModalFocus = null;
 const THEME_STORAGE_KEY = "portfolio-theme";
 
 if (yearNode) {
@@ -272,6 +281,139 @@ if (backToTopButton) {
       top: 0,
       behavior: prefersReducedMotion ? "auto" : "smooth",
     });
+  });
+}
+
+const getFocusableElements = (container) => {
+  if (!container) {
+    return [];
+  }
+  const selectors = [
+    "a[href]",
+    "button:not([disabled])",
+    "input:not([disabled])",
+    "select:not([disabled])",
+    "textarea:not([disabled])",
+    '[tabindex]:not([tabindex="-1"])',
+  ].join(", ");
+
+  return Array.from(container.querySelectorAll(selectors)).filter((element) => {
+    if (element.hasAttribute("hidden")) {
+      return false;
+    }
+    return element.offsetParent !== null;
+  });
+};
+
+const closeCvModal = () => {
+  if (!cvModal || !cvModal.classList.contains("open")) {
+    return;
+  }
+
+  cvModal.classList.remove("open");
+  cvModal.setAttribute("aria-hidden", "true");
+  body.classList.remove("modal-open");
+  document.removeEventListener("keydown", handleCvModalKeydown);
+
+  if (lastModalFocus && typeof lastModalFocus.focus === "function") {
+    lastModalFocus.focus({ preventScroll: true });
+  }
+  lastModalFocus = null;
+};
+
+function handleCvModalKeydown(event) {
+  if (!cvModal || !cvModal.classList.contains("open")) {
+    return;
+  }
+
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closeCvModal();
+    return;
+  }
+
+  if (event.key !== "Tab" || !cvModalPanel) {
+    return;
+  }
+
+  const focusable = getFocusableElements(cvModalPanel);
+  if (!focusable.length) {
+    return;
+  }
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+    return;
+  }
+
+  if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
+
+const openCvModal = () => {
+  if (!cvModal) {
+    return;
+  }
+
+  lastModalFocus = document.activeElement;
+  closeMenu();
+  cvModal.classList.add("open");
+  cvModal.setAttribute("aria-hidden", "false");
+  body.classList.add("modal-open");
+
+  document.addEventListener("keydown", handleCvModalKeydown);
+  window.setTimeout(() => {
+    if (cvModalCloseButton) {
+      cvModalCloseButton.focus();
+    }
+  }, prefersReducedMotion ? 0 : 80);
+};
+
+if (cvModal && cvPreviewButtons.length) {
+  cvPreviewButtons.forEach((button) => {
+    button.addEventListener("click", openCvModal);
+  });
+
+  cvCloseTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", closeCvModal);
+  });
+}
+
+const forceDownloadCv = async () => {
+  const downloadWithAnchor = (url) => {
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = CV_DOWNLOAD_FILENAME;
+    link.rel = "noopener";
+    document.body.append(link);
+    link.click();
+    link.remove();
+  };
+
+  try {
+    const response = await fetch(CV_DOWNLOAD_SOURCE, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error("download_failed");
+    }
+
+    const blob = await response.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    downloadWithAnchor(blobUrl);
+    window.setTimeout(() => URL.revokeObjectURL(blobUrl), 1200);
+  } catch (error) {
+    downloadWithAnchor(CV_DOWNLOAD_SOURCE);
+  }
+};
+
+if (cvModalDownloadButton) {
+  cvModalDownloadButton.addEventListener("click", () => {
+    void forceDownloadCv();
   });
 }
 
