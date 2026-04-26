@@ -30,7 +30,7 @@ const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
 ).matches;
 const CV_DOWNLOAD_SOURCE = "assets/gagan-pandey-cv.pdf";
-const CV_DOWNLOAD_FILENAME = "Gagan-Pandey-CV.pdf";
+const CV_DOWNLOAD_FILENAME = "Gagan_Pandey_CV.pdf";
 
 let countersStarted = false;
 let ticking = false;
